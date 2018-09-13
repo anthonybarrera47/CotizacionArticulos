@@ -55,6 +55,12 @@
     <Compile Include="BLL\ArticuloBLL.cs" />
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Entidades\Articulo.cs" />
+    <Compile Include="UI\Registro\RegistroArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registro\RegistroArticulo.Designer.cs">
+      <DependentUpon>RegistroArticulo.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +69,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="UI\Registro\RegistroArticulo.resx">
+      <DependentUpon>RegistroArticulo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VentanaPrincipal.resx">
       <DependentUpon>VentanaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -74,6 +83,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -91,11 +101,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DAL\Scripts\CotizacionDb.sql" />
+    <Content Include="Resource\if_cross-24_103181.png" />
+    <Content Include="Resource\if_floppy_disk_save_103863.png" />
+    <Content Include="Resource\if_new10_216291.png" />
+    <Content Include="Resource\if_search_126577.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resource\" />
     <Folder Include="UI\Consulta\" />
-    <Folder Include="UI\Registro\" />
     <Folder Include="UI\Reportes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

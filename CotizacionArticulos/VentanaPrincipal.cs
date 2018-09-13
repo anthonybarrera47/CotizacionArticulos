@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CotizacionArticulos.UI.Registro;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,5 +18,11 @@ namespace CotizacionArticulos
             InitializeComponent();
         }
 
+        private void cotizacionDeArticulosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistroArticulo registro = new RegistroArticulo();
+            registro.MdiParent = this;
+            registro.Show();
+        }
     }
 }

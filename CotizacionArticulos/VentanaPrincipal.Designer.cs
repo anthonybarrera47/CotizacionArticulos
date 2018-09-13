@@ -30,8 +30,8 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cotizacionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cotizacionDeArticulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaDeArticulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -56,6 +56,13 @@
             this.cotizacionToolStripMenuItem1.Size = new System.Drawing.Size(91, 24);
             this.cotizacionToolStripMenuItem1.Text = "Cotizacion";
             // 
+            // cotizacionDeArticulosToolStripMenuItem
+            // 
+            this.cotizacionDeArticulosToolStripMenuItem.Name = "cotizacionDeArticulosToolStripMenuItem";
+            this.cotizacionDeArticulosToolStripMenuItem.Size = new System.Drawing.Size(237, 26);
+            this.cotizacionDeArticulosToolStripMenuItem.Text = "Cotizacion de Articulos";
+            this.cotizacionDeArticulosToolStripMenuItem.Click += new System.EventHandler(this.cotizacionDeArticulosToolStripMenuItem_Click);
+            // 
             // consultaToolStripMenuItem
             // 
             this.consultaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -64,31 +71,27 @@
             this.consultaToolStripMenuItem.Size = new System.Drawing.Size(78, 24);
             this.consultaToolStripMenuItem.Text = "Consulta";
             // 
-            // cotizacionDeArticulosToolStripMenuItem
-            // 
-            this.cotizacionDeArticulosToolStripMenuItem.Name = "cotizacionDeArticulosToolStripMenuItem";
-            this.cotizacionDeArticulosToolStripMenuItem.Size = new System.Drawing.Size(237, 26);
-            this.cotizacionDeArticulosToolStripMenuItem.Text = "Cotizacion de Articulos";
-            // 
             // consultaDeArticulosToolStripMenuItem
             // 
             this.consultaDeArticulosToolStripMenuItem.Name = "consultaDeArticulosToolStripMenuItem";
             this.consultaDeArticulosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.consultaDeArticulosToolStripMenuItem.Text = "Consulta de Articulos";
             // 
-            // Form1
+            // VentanaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
-            this.Text = "Cotizacion De Articulos";
+            this.Name = "VentanaPrincipal";
+            this.Text = "Cotizacion de Articulos";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+
 
         }
 
