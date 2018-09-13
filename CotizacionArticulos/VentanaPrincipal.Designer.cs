@@ -76,6 +76,7 @@
             this.consultaDeArticulosToolStripMenuItem.Name = "consultaDeArticulosToolStripMenuItem";
             this.consultaDeArticulosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.consultaDeArticulosToolStripMenuItem.Text = "Consulta de Articulos";
+            this.consultaDeArticulosToolStripMenuItem.Click += new System.EventHandler(this.consultaDeArticulosToolStripMenuItem_Click);
             // 
             // VentanaPrincipal
             // 
@@ -91,7 +92,6 @@
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
 
         }
 

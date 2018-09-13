@@ -55,6 +55,12 @@
     <Compile Include="BLL\ArticuloBLL.cs" />
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Entidades\Articulo.cs" />
+    <Compile Include="UI\Consulta\ConsultarArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consulta\ConsultarArticulo.Designer.cs">
+      <DependentUpon>ConsultarArticulo.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Registro\RegistroArticulo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="UI\Consulta\ConsultarArticulo.resx">
+      <DependentUpon>ConsultarArticulo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Registro\RegistroArticulo.resx">
       <DependentUpon>RegistroArticulo.cs</DependentUpon>
     </EmbeddedResource>
@@ -107,7 +116,6 @@
     <Content Include="Resource\if_search_126577.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="UI\Consulta\" />
     <Folder Include="UI\Reportes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,4 +1,5 @@
-﻿using CotizacionArticulos.UI.Registro;
+﻿using CotizacionArticulos.UI.Consulta;
+using CotizacionArticulos.UI.Registro;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,6 +24,13 @@ namespace CotizacionArticulos
             RegistroArticulo registro = new RegistroArticulo();
             registro.MdiParent = this;
             registro.Show();
+        }
+
+        private void consultaDeArticulosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultarArticulo consulta = new ConsultarArticulo();
+            consulta.MdiParent = this;
+            consulta.Show();
         }
     }
 }
