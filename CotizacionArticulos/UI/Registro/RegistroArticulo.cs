@@ -19,74 +19,57 @@ namespace CotizacionArticulos.UI.Registro
         {
             InitializeComponent();
         }
-        public void validarTextBox(int i, KeyPressEventArgs e)
+        public void validarTextBox( KeyPressEventArgs e,TextBox textBox,string cadena)
         {
-           switch(i)
-            {
-                case 1:
-                    try
+            cadena = textBox.Text;
+           
+                    if (e.KeyChar == 8)
                     {
-                        //Para Validar Solo numeros
-                        CultureInfo cc = System.Threading.Thread.CurrentThread.CurrentCulture;
-                        if (char.IsNumber(e.KeyChar) || e.KeyChar.ToString() == cc.NumberFormat.NumberDecimalSeparator)
-                            e.Handled = false;
-                        else if (char.IsControl(e.KeyChar))
-                            e.Handled = false;
-                        else if (char.IsWhiteSpace(e.KeyChar))
-                            e.Handled = true;
-                        else
-                            e.Handled = true;
+                        e.Handled = false;
+                        return;
+                    }
+                    bool IsDec = false;
+                    int nroDec = 0;
 
-                    }
-                    catch (Exception)
+                    for (int x = 0; x < textBox.Text.Length; x++)
                     {
-                        throw;
-                    }
-                    break;
-                case 2:
-                    try
-                    {   //Para Validar Solo letras
-                        CultureInfo cc = System.Threading.Thread.CurrentThread.CurrentCulture;
-                        if (char.IsLetter(e.KeyChar))
-                            e.Handled = false;
-                        else if (char.IsControl(e.KeyChar))
-                            e.Handled = false;
-                        else if (char.IsWhiteSpace(e.KeyChar))
-                            e.Handled = false;
-                        else
-                            e.Handled = true;
+                        if (textBox.Text[x] == '.')
+                            IsDec = true;
 
+                        if (IsDec && nroDec++ >= 2)
+                        {
+                            e.Handled = true;
+                            return;
+                        }
                     }
-                    catch (Exception)
-                    {
-                        throw;
-                    }
-                    break;
-            }
+                    if (e.KeyChar >= 48 && e.KeyChar <= 57)
+                        e.Handled = false;
+                    else if (e.KeyChar == 46)
+                        e.Handled = (IsDec) ? true : false;
+                    else
+                        e.Handled = true;
+                  
+            
            
         }
         private void PrecioTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            validarTextBox(1,e);
+            validarTextBox(e,PrecioTextBox,PrecioTextBox.Text);
         }
 
         private void ExistenciaTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            validarTextBox(1, e);
-        }
-
-        private void DescripcionTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validarTextBox(2, e);
+            validarTextBox(e,ExistenciaTextBox, ExistenciaTextBox.Text);
         }
 
         private void CantidadCotizadaTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            validarTextBox(1, e);
+            validarTextBox(e,CantidadCotizadaTextBox,CantidadCotizadaTextBox.Text);
         }
 
         private void Limpiar()
         {
+            errorProvider.Clear();
             IdNumericUpDown.Value = 0;
             DescripcionTextBox.Text = string.Empty;
             PrecioTextBox.Text = Convert.ToString(0.0f);
@@ -128,6 +111,7 @@ namespace CotizacionArticulos.UI.Registro
             bool paso = false;
             if (!Validar())
                 return;
+
             articulo = llenaClase();
 
             if (IdNumericUpDown.Value == 0)
@@ -213,16 +197,14 @@ namespace CotizacionArticulos.UI.Registro
 
             if(articulo != null)
             {
+                errorProvider.Clear();
                 LlenaCampo(articulo);
                 MessageBox.Show("Articulo Encontrado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
-            {
                 MessageBox.Show("Articulo no Encontrado", "Fallo!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Limpiar();
-            }
+            
         }
 
-       
     }   
 }

@@ -66,7 +66,9 @@ namespace CotizacionArticulos.BLL.Tests
         [TestMethod()]
         public void GetListTest()
         {
-            Assert.Fail();
+            bool paso;
+            paso = ArticuloBLL.GetList(x => true).Count() > 0;
+            Assert.AreEqual(paso, true);
         }
     }
 }

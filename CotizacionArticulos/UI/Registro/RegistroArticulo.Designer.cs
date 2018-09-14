@@ -127,12 +127,11 @@
             this.DescripcionTextBox.Name = "DescripcionTextBox";
             this.DescripcionTextBox.Size = new System.Drawing.Size(212, 22);
             this.DescripcionTextBox.TabIndex = 32;
-            this.DescripcionTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DescripcionTextBox_KeyPress);
             // 
             // PrecioTextBox
             // 
             this.PrecioTextBox.Location = new System.Drawing.Point(112, 109);
-            this.PrecioTextBox.MaxLength = 8;
+            this.PrecioTextBox.MaxLength = 10;
             this.PrecioTextBox.Name = "PrecioTextBox";
             this.PrecioTextBox.Size = new System.Drawing.Size(100, 22);
             this.PrecioTextBox.TabIndex = 33;
@@ -141,7 +140,7 @@
             // ExistenciaTextBox
             // 
             this.ExistenciaTextBox.Location = new System.Drawing.Point(112, 141);
-            this.ExistenciaTextBox.MaxLength = 8;
+            this.ExistenciaTextBox.MaxLength = 10;
             this.ExistenciaTextBox.Name = "ExistenciaTextBox";
             this.ExistenciaTextBox.Size = new System.Drawing.Size(100, 22);
             this.ExistenciaTextBox.TabIndex = 34;
@@ -150,7 +149,7 @@
             // CantidadCotizadaTextBox
             // 
             this.CantidadCotizadaTextBox.Location = new System.Drawing.Point(151, 170);
-            this.CantidadCotizadaTextBox.MaxLength = 8;
+            this.CantidadCotizadaTextBox.MaxLength = 10;
             this.CantidadCotizadaTextBox.Name = "CantidadCotizadaTextBox";
             this.CantidadCotizadaTextBox.Size = new System.Drawing.Size(173, 22);
             this.CantidadCotizadaTextBox.TabIndex = 35;
